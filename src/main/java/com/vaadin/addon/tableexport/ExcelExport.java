@@ -1,9 +1,9 @@
 package com.vaadin.addon.tableexport;
 
-import com.vaadin.data.Container;
-import com.vaadin.data.Property;
-import com.vaadin.data.util.ObjectProperty;
-import com.vaadin.ui.Table;
+import com.vaadin.v7.data.Container;
+import com.vaadin.v7.data.Property;
+import com.vaadin.v7.data.util.ObjectProperty;
+import com.vaadin.v7.ui.Table;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -629,7 +629,7 @@ public class ExcelExport extends TableExport {
                 if (getTableHolder().isExportableFormattedProperty()) {
                     final String formattedProp = getTableHolder().getFormattedPropertyValue(rootItemId, propId, prop);
                     if (null == prop) {
-                        prop = new ObjectProperty<String>(formattedProp, String.class);
+                        prop = new ObjectProperty(formattedProp, String.class);
                     } else {
                         final Object val = prop.getValue();
                         if (null == val) {

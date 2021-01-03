@@ -1,10 +1,10 @@
 package com.vaadin.addon.tableexport;
 
-import com.vaadin.data.Container;
-import com.vaadin.data.Property;
-import com.vaadin.data.util.HierarchicalContainer;
-import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
+import com.vaadin.v7.data.Container;
+import com.vaadin.v7.data.Property;
+import com.vaadin.v7.data.util.HierarchicalContainer;
+import com.vaadin.v7.ui.Table;
 import org.apache.poi.ss.usermodel.CellStyle;
 
 import java.util.Arrays;

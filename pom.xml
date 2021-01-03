@@ -12,21 +12,20 @@
 
     <groupId>org.vaadin.addon</groupId>
     <artifactId>tableexport-for-vaadin</artifactId>
-    <version>1.5.1.5</version>
+    <version>1.6-SNAPSHOT</version>
     <name>TableExport</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skipTests>true</skipTests>
-        <vaadin.version>7.2.3</vaadin.version>
-        <!-- commons-io : We use version 2.2 because that's the version that's a Vaadin dependency -->
-        <commons-io.version>2.2</commons-io.version>
-        <apache-poi.version>3.10-FINAL</apache-poi.version>
-        <filteringtable.addon.version>0.9.8.v7</filteringtable.addon.version>
+        <vaadin.version>8.12.1</vaadin.version>
+        <commons-io.version>2.5</commons-io.version>
+        <apache-poi.version>3.14</apache-poi.version>
+<!--        <filteringtable.addon.version>1.0.1.v8</filteringtable.addon.version>-->
         <!-- plugins -->
-        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <maven-jar-plugin.version>2.3.1</maven-jar-plugin.version>
-        <maven-source-plugin.version>2.1.2</maven-source-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
+        <maven-source-plugin.version>3.2.0</maven-source-plugin.version>
         <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
     </properties>
 
@@ -57,46 +56,24 @@
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
-        <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net Maven 2 Repository</name>
-            <url>http://download.java.net/maven/2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>vaadin-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>vaadin-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
         </pluginRepository>
     </pluginRepositories>
 
     <dependencies>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-server</artifactId>
+            <artifactId>vaadin-compatibility-server</artifactId>
             <version>${vaadin.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-client</artifactId>
+            <artifactId>vaadin-compatibility-client</artifactId>
             <version>${vaadin.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -114,24 +91,12 @@
             <scope>provided</scope>
         </dependency>
         -->
-        <!--
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-push</artifactId>
-            <version>${vaadin.version}</version>
-        </dependency>
-        -->
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-themes</artifactId>
-            <version>${vaadin.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <version>3.0.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -142,12 +107,12 @@
             <artifactId>poi</artifactId>
             <version>${apache-poi.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.vaadin.addons</groupId>
-            <artifactId>filteringtable</artifactId>
-            <version>${filteringtable.addon.version}</version>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.tepi.filtertable</groupId>-->
+<!--            <artifactId>filteringtable</artifactId>-->
+<!--            <version>${filteringtable.addon.version}</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
     </dependencies>
     <build>
         <plugins>
@@ -156,8 +121,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 

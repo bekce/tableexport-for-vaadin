@@ -1,7 +1,7 @@
 package com.vaadin.addon.tableexport;
 
-import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
+import com.vaadin.v7.ui.Table;
 
 import java.io.File;
 import java.io.FileNotFoundException;
